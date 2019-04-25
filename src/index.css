@@ -60,7 +60,7 @@ a {
   display: none;
 }
 .hiddenNavLink:hover {
-  background: #4e1ebe;
+  font-weight: bolder;
 }
 .relative:hover .hiddenNavLink {
   display: block;
