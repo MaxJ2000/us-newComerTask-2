@@ -1,0 +1,88 @@
+span {
+  white-space: pre;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.fixNav {
+  background: #6501ee;
+  position: fixed;
+  color: white;
+  top: 150px;
+  left: 40px;
+  border-radius: 10%;
+}
+.navBody {
+  padding: 20px;
+}
+.navBody li {
+  padding: 10px;
+  border-radius: 15%;
+}
+.navBody li:hover {
+  background: #4e1ebe;
+}
+.header {
+  background: #4e1ebe;
+  height: 100vh;
+  padding: 0 280px;
+}
+.yellowBall {
+  position: fixed;
+  width: 280px;
+  color: white;
+  padding: 0px;
+}
+.relative {
+  position: relative;
+}
+.relative div {
+  position: absolute;
+  left: 105px;
+  top: 0px;
+  padding-left: 30px;
+}
+.hiddenNavLink {
+  /* margin-left: 30px; */
+  width: 100px;
+  background: #6501ee;
+  padding: 10px;
+  border-radius: 15%;
+
+  display: none;
+}
+.hiddenNavLink:hover {
+  background: #4e1ebe;
+}
+.relative:hover .hiddenNavLink {
+  display: block;
+}
+.hiddenNavLink:hover .hiddenNavLink {
+  display: block;
+}
+.move {
+  display: flex;
+  height: 70px;
+  padding-left: 40px;
+}
+.ball {
+  width: 60px;
+  height: 60px;
+  background: yellow;
+  border-radius: 50%;
+}
+.yellowBallText {
+  position: relative;
+  top: 15px;
+  left: -28px;
+  font-size: 12px;
+  mix-blend-mode: difference;
+}
