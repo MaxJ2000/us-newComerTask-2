@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <div class="dot"></div>
     <nav class="fixNav">
         <ul class="navBody">
             <li><a class="navLink" href="http://127.0.0.1:8080/">Home</a></li>
@@ -17,12 +18,21 @@
             </li>
             <li><a class="navLink" href="http://127.0.0.1:8080/">Venus Map</a></li>
             <li class="relative">
-                <a class="navLink">Timetable</a>
-                <div><a class="hiddenNavLink" href="http://127.0.0.1:8080/timetable">Session</a></div>
+                <a class="navLink arrow">Timetable</a>
+                <div class="pre">
+                    <div class="radius"><a class="hiddenNavLink" href="http://127.0.0.1:8080/timetable"> Session</a>
+                        <a class="hiddenNavLink" href="http://127.0.0.1:8080/timetable"> Pitch</a>
+                    </div>
+                </div>
             </li>
             <li class="relative">
-                <a class="navLink" href="http://127.0.0.1:8080">Program</a>
-                <div><a class="hiddenNavLink" href="http://127.0.0.1:8080/session">Session List</a></div>
+                <a class="navLink arrow" href="http://127.0.0.1:8080">Program</a>
+                <div class="pre">
+                    <div class="radius">
+                        <a class="hiddenNavLink" href="http://127.0.0.1:8080/session">Exhibition List</a>
+                        <a class="hiddenNavLink" href="http://127.0.0.1:8080/session">Session List</a>
+                    </div>
+                </div>
             </li>
             <li>
                 <a href="http://127.0.0.1:8080/session/sponsor">Sponsor</a>
@@ -39,11 +49,12 @@ OPEN RESEARCH FORUM 2018 </span>
     <div class="header">
         <div class="headerCenter">
             <span class="headerTitle">
-                After the Next Societies
+After the
+Next Societies
             </span>
             <span class="headerIntroduction">
-                Keio University SFC Open Research Forum 2018 ORF2018 was finished.
-                Thank you for coming!
+Keio University SFC Open Research Forum 2018
+ORF2018 was finished.Thank you for coming!
             </span>
         </div>
         <div class="headerRight">
@@ -54,23 +65,66 @@ OPEN RESEARCH FORUM 2018 </span>
     <div class="schedule">
         <h1 class="scheduleH">Schedule</h1>
         <div class="scheduleMain">
-            <div class="scheduleLeft">
-                <div class="scheduleLine1">1</div>
-                <div class="scheduleLine2">2</div>
-                <div class="scheduleLine3">3</div>
+                <div class="scheduleLine1">
+                    <div class="day">DAY1</div>
+                    <div class="date">2018/11/22 (Thu)</div><br><br>
+                    <div class="scheduleItem">
+                        <span class="scheduleItemF">    Exhibition</span>
+                        <span class="scheduleItemS">@Hall B1F Venue・Hall A</span>
+                    </div>
+                    <div class="scheduleItem">
+                        <span class="scheduleItemF">    Session</span>
+                        <span class="scheduleItemS">@Tower 4F Venue</span>
+                    </div><br>
+                    <div class="date">10:00～20:00</div>
+                    <span class="scheduleTime">( Open 9:30)</span><br><br>
+                    <div class="scheduleItem">
+                        <span class="scheduleItemF">    Pitch</span>
+                        <span class="scheduleItemS">@Hall B1F Venue・Hall B</span>
+                    </div><br>
+                    <div class="date">10:00～19:00</div>
+                    <span class="scheduleTime">( Open 9:30)</span>
             </div>
-            <div class="scheduleRight">
-                <div class="scheduleLine1">1</div>
-                <div class="scheduleLine2">2</div>
-                <div class="scheduleLine3">3</div>
+            <div class="scheduleLine2">
+                <div class="day">DAY1</div>
+                <div class="date">2018/11/22 (Thu)</div><br><br>
+                <div class="scheduleItem">
+                    <span class="scheduleItemF">    Exhibition</span>
+                    <span class="scheduleItemS">@Hall B1F Venue・Hall A</span>
+                </div>
+                <div class="scheduleItem">
+                    <span class="scheduleItemF">    Session</span>
+                    <span class="scheduleItemS">@Tower 4F Venue</span>
+                </div><br>
+                <div class="date">10:00～20:00</div>
+                <span class="scheduleTime">( Open 9:30)</span><br><br>
+                <div class="scheduleItem">
+                    <span class="scheduleItemF">    Pitch</span>
+                    <span class="scheduleItemS">@Hall B1F Venue・Hall B</span>
+                </div><br>
+                <div class="date">10:00～19:00</div>
+                <span class="scheduleTime">( Open 9:30)</span>
             </div>
-            <div class="schedulePicuture">picture</div>
         </div>
+        <div class="scheduleButton">
+            <div class="scheduleButtonLeft">Session Timetable</div>
+            <div class="scheduleButtonRight">Pitch Timetable</div>
+        </div>
+        <div class="scheduleBottom">
+                <div class="scheduleBottomLeft">
+                    <div class="scheduleBottomLeftH">Admission Fee</div>
+                    <div class="scheduleBottomLeftP">Free (Pre-registration NOT required)</div>
+                </div>
+                <div class="scheduleBottomRight">
+                    <div class="scheduleBottomRightH">About Reception</div>
+                    <div class="scheduleBottomRightP">Please stop by the general reception at the entrance of Hall B1F before entering the SFC Open Research Forum 2018.</div>
+                </div>
+            </div>
         <div class="scheduleButtom">
             <a class="scheduleLink" href="http://127.0.0.1:8080/timetable">Session Timetable</a>
         </div>
     </div>
-    <div class="admissionAndReception">
+    <!-- <div class="admissionAndReception">
         <div class="admission">
             <h2 class="admissionFee">Admission Fee</h2>
             <p class="admissionContent">Free (Pre-registration NOT required)</p>
@@ -80,7 +134,7 @@ OPEN RESEARCH FORUM 2018 </span>
             <p class="receptionContent">Please stop by the general reception at the entrance of Hall B1F before entering
                 the SFC Open Research Forum 2018.</p>
         </div>
-    </div>
+    </div> -->
 </body>
 
 </html>
