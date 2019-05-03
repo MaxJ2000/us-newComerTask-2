@@ -3,7 +3,11 @@ span {
 }
 body {
   display: flex;
+  user-select: none;
   flex-direction: column;
+  overflow-x: hidden;
+  font-family: Roboto, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3",
+    "Noto Sans JP", Meiryo, メイリオ, sans-serif;
 }
 ul {
   list-style: none;
@@ -12,6 +16,68 @@ a {
   text-decoration: none;
   color: white;
 }
+.menuButton {
+  display: none;
+  background: #6501ee;
+  color: white;
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  position: fixed;
+  top: 60px;
+  right: 50px;
+  width: 80px;
+  height: 40px;
+  border-radius: 16px;
+  transition: 1s;
+}
+.menu {
+  opacity: 0;
+  top: 15vh;
+  z-index: -1;
+  left: 10vw;
+  width: 80vw;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+}
+.menuContent {
+  background: #6501ee;
+  height: 65vh;
+  width: 80vw;
+  border-radius: 24px;
+  opacity: 0.9;
+}
+.menuContent img {
+  content: url(./img/罪恶の偷懒.png);
+  position: relative;
+  top: 50px;
+  left: 30px;
+  height: 50vh;
+}
+.menuBottom {
+  display: flex;
+  position: relative;
+  top: 1vh;
+}
+.menuJP,
+.menuEN {
+  background: rgb(101, 1, 238, 0.8);
+  width: 39.5vw;
+  height: 4vh;
+  line-height: 4vh;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bolder;
+  border-radius: 12px;
+}
+.menuEN {
+  position: relative;
+  background: rgb(101, 1, 238, 0.5);
+  left: 1vw;
+}
 .dot {
   display: none;
   position: absolute;
@@ -19,14 +85,17 @@ a {
   height: 15px;
   background: yellow;
   border-radius: 50%;
+  transition: width 1s, height 1s, background 1s, top 0.05s, left 0.05s;
 }
 .fixNav {
   background: #6501ee;
   position: fixed;
   color: white;
-  top: 150px;
+  top: 250px;
   left: 40px;
   border-radius: 24px;
+  transition: 1s;
+  animation: navAnimation 1s;
 }
 
 .navBody {
@@ -41,25 +110,58 @@ a {
   background: #4e1ebe;
 }
 .header {
-  background: #4e1ebe url(./img/lay7.png) no-repeat center center;
+  overflow-x: hidden;
   height: 100vh;
-  padding: 0 50px 0 280px;
+  width: 100vw;
+  padding: 0 50px 0 350px;
   background-size: 650px 1000px;
+  margin-left: 10%;
   display: flex;
   flex-direction: row;
   align-content: space-around;
 }
+.background {
+  background: #4e1ebe;
+  overflow-y: hidden;
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  top:0;
+  height: 100vh;
+  width: 100vw;
+  display:flex;
+}
+.headerPic {
+  height: 1200px;
+  overflow-x: hidden;
+  z-index: -1;
+  position: absolute;
+  top:calc(50vh - 600px);
+  left: calc(50vw - 350px);
+  justify-content: center;
+  content: url(./img/lay7.png);
+  /* height: 900px;
+  width: 600px; */
+}
+/* .header ::before {
+  content: "";
+  width: 650px;
+  height: 1000px;
+  background: url(./img/lay7.png)  no-repeat;
+  background-size: 650px 1000px;
+} */
 .yellowBall {
   position: fixed;
   width: 280px;
   color: white;
   padding: 0px;
+  transition: 0.4s;
 }
 .relative {
   position: relative;
 }
 .radius {
-  border-radius: 18%;
+  border-radius: 24px;
   width: 160px;
   background: #6501ee;
 }
@@ -72,7 +174,7 @@ a {
   transition: all 0.3s linear;
 }
 .hiddenNavLink {
-  display: block;
+  display: none;
   font-weight: 100;
   width: 130px;
   padding: 10px 10px 10px 20px;
@@ -95,16 +197,19 @@ a {
 .hiddenNavLink:hover {
   font-weight: bolder;
 }
-.relative:hover .pre {
+.relative:hover .pre,
+.relative:hover .hiddenNavLink {
   opacity: 1;
+  display: block;
 }
 .pre:hover .pre {
   opacity: 1;
 }
 .move {
   display: flex;
-  height: 70px;
-  padding-left: 40px;
+  align-content: center;
+  margin-left: 40px;
+  height: 150px;
 }
 .ball {
   width: 60px;
@@ -116,7 +221,7 @@ a {
   position: relative;
   top: 15px;
   left: -28px;
-  font-size: 12px;
+  font-size: 11px;
   mix-blend-mode: difference;
 }
 .headerCenter {
@@ -138,8 +243,11 @@ a {
 }
 .headerRight {
   display: flex;
-  margin:auto 20px 50px;
-  position: relative;
+  margin: auto 20px 50px;
+  position: absolute;
+  top: 83vh;
+  right: 3vw;
+  animation: headerRightAnimation 1s;
 }
 .scrollDownText {
   color: yellow;
@@ -160,6 +268,7 @@ a {
 }
 .scrollDownButton::before {
   content: "";
+  z-index: 1;
   border: 1.5px solid #6501ee;
   position: absolute;
   top: 32px;
@@ -176,24 +285,31 @@ a {
   border-right: 0;
   border-bottom: 0;
   transform: rotate(-135deg);
-  top:34px;
+  top: 34px;
   right: 32.9px;
 }
 .scrollDownButton:hover::after,
 .scrollDownButton:hover::before {
   border-color: yellow;
 }
-.scrollDownButton:hover {
-  background: #4e1ebe;
-  height: 72px;
+.scrollDownButtonHover {
   width: 72px;
-  border: 4px solid yellow;
+  height: 72px;
+  transform: scale(0, 0);
+  z-index: -1;
+  background: #4e1ebe;
+  border-radius: 50%;
+  transition: transform, 0.5s;
+}
+.scrollDownButton:hover .scrollDownButtonHover {
+  transform: scale(1, 1);
 }
 .schedule {
-  padding: 0 50px 0 280px;
+  padding: 0 50px 0 350px;
   height: 900px;
   color: #4e1ebe;
   display: flex;
+  margin-left: 10%;
   flex-direction: column;
   background: url(./img/img-core-all-top.png) no-repeat bottom right;
   background-size: 550px 650px;
@@ -238,6 +354,7 @@ a {
   top: 5px;
   height: 5px;
   width: 5px;
+  left: -5px;
   background-color: red;
 }
 .scheduleButton {
@@ -254,8 +371,29 @@ a {
   margin-right: 40px;
   line-height: 80px;
   text-align: start;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bolder;
+}
+.scheduleSide {
+  flex: 1 0 300px;
+  justify-self: flex-end;
+  height: 409px;
+  display: flex;
+}
+.scheduleImage {
+  content: url(./img/img-float1.jpg);
+  width: 300px;
+  position: absolute;
+  left: calc(100vw - 300px);
+}
+.scheduleSide::before {
+  content: "";
+  width: 260px;
+  height: 30px;
+  background: #4e1ebe;
+  position: absolute;
+  top: calc(100vh + 170px);
+  left: calc(100vw - 260px);
 }
 .scheduleButtonLeft,
 .scheduleButtonRight {
@@ -289,9 +427,9 @@ a {
 }
 .scheduleBottomLeft,
 .scheduleBottomRight {
-  width: 400px;
+  flex: 0 1 250px;
   height: 220px;
-  padding: 0 40px;
+  padding: 0 30px;
   background: #4e1ebe;
   color: white;
 }
@@ -310,10 +448,351 @@ a {
   font-weight: bolder;
   padding: 50px 0 30px 0;
 }
+.scheduleBottom {
+  display: flex;
+}
 .scheduleBottomLeftP {
   font-size: 20px;
   font-weight: bolder;
 }
 .scheduleBottomRightP {
   font-size: 16px;
+}
+.venue {
+  display: flex;
+  margin-left: 10%;
+  flex-direction: column;
+  padding: 350px 0 0 280px;
+  color: #4e1ebe;
+}
+.venueH {
+  font-size: 80px;
+}
+.venueCenter {
+  display: flex;
+  flex-direction: row;
+}
+.venueCenterLeft,
+.venueCenterCenter,
+.venueCenterRight {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 0 30px;
+  border-left: 1px solid #decaf5;
+}
+.venueCenterLeft::before,
+.venueCenterCenter::before,
+.venueCenterRight::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: red;
+  position: relative;
+  top: 10px;
+  left: -10px;
+}
+.venueCenterLeft h3,
+.venueCenterCenter h3,
+.venueCenterRight h3 {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.venueCenterLeft h2,
+.venueCenterCenter h2,
+.venueCenterRight h2 {
+  margin: 5px 0;
+  font-size: 20px;
+}
+.venueBottom {
+  display: flex;
+  padding: 80px 0 160px 0;
+}
+.venueButtonLeft,
+.venueButtonRight {
+  background: yellow;
+  border-radius: 100px;
+  position: relative;
+  height: 80px;
+  width: 250px;
+  padding-left: 40px;
+  margin-right: 40px;
+  line-height: 80px;
+  text-align: start;
+  font-size: 17px;
+  font-weight: bolder;
+}
+.venueButtonLeft::before,
+.venueButtonRight::before {
+  content: "";
+  width: 18px;
+  height: 3px;
+  background: black;
+  position: absolute;
+  top: 40px;
+  right: 30px;
+}
+.venueButtonLeft::after,
+.venueButtonRight::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 2px solid black;
+  border-right: 0;
+  border-bottom: 0;
+  position: absolute;
+  transform: rotate(135deg);
+  top: 35px;
+  right: 30px;
+}
+.program {
+  display: flex;
+  margin-left: 10%;
+  flex-direction: column;
+  padding: 0 0 0 280px;
+  color: #4e1ebe;
+}
+.programH {
+  font-size: 80px;
+}
+.programBottom {
+  display: flex;
+}
+.programBottomLeft,
+.programBottomCenter,
+.programBottomRight {
+  display: flex;
+  flex-direction: column;
+}
+.programButon {
+  background: yellow;
+  border-radius: 100px;
+  position: relative;
+  left: -15px;
+  top: 20px;
+  height: 80px;
+  width: 200px;
+  padding-left: 40px;
+  margin-right: 40px;
+  line-height: 80px;
+  text-align: start;
+  font-size: 17px;
+  font-weight: bolder;
+}
+.programButon::before {
+  content: "";
+  width: 18px;
+  height: 3px;
+  background: black;
+  position: absolute;
+  top: 40px;
+  right: 30px;
+}
+.programButon::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: 2px solid black;
+  border-right: 0;
+  border-bottom: 0;
+  position: absolute;
+  transform: rotate(135deg);
+  top: 35px;
+  right: 30px;
+}
+.programBottom span {
+  color: black;
+  position: relative;
+  padding-left: 10px;
+}
+.programBottom span::before {
+  content: "";
+  background: red;
+  height: 3px;
+  width: 3px;
+  position: absolute;
+  top: 6px;
+  left: 2px;
+}
+.programBottom h3 {
+  margin-top: 0;
+}
+.programBottomLeft img {
+  content: url(./img/img-tenji.jpg);
+  width: 225px;
+  border-radius: 50%;
+}
+.programBottomCenter {
+  position: relative;
+  top: 80px;
+}
+.programBottomCenter img {
+  content: url(./img/img-session.jpg);
+  width: 225px;
+  border-radius: 50%;
+}
+.programBottomRight img {
+  content: url(./img/img-pitch.jpg);
+  width: 225px;
+  border-radius: 50%;
+}
+.bottom {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background: #4e1ebe;
+  padding: 100px 0 0 280px;
+  margin: 180px 0 0 0px;
+  color: white;
+}
+.bottomIcon {
+  display: flex;
+}
+.facebook {
+  content: url(./img/facebook.png);
+}
+.twitter {
+  content: url(./img/twitter.png);
+}
+.bottomLink {
+  padding: 0;
+  width: 80%;
+  font-size: 13px;
+}
+.bottomLink li {
+  display: inline;
+  padding-right: 15px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.bottomContact {
+  background: #6501ee;
+  border-radius: 24px;
+  width: 80%;
+  padding-left: 20px;
+  margin-bottom: 120px;
+}
+.bottomContact h2 {
+  font-size: 18px;
+}
+.toTopButton {
+  height: 60px;
+  width: 60px;
+  border: 4px solid yellow;
+  background-color: yellow;
+  border-radius: 50%;
+  color: #4e1ebe;
+  text-align: center;
+  transition: all 0.3s linear;
+  position: absolute;
+  bottom: 2vh;
+  right: 2vw;
+}
+.toTopButton::before {
+  content: "";
+  z-index: 1;
+  border: 1.5px solid #6501ee;
+  position: absolute;
+  top: 22px;
+  height: 15px;
+  right: 29px;
+}
+.toTopButton::after {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  background: none;
+  border: 2.5px solid #6501ee;
+  border-right: 0;
+  border-bottom: 0;
+  transform: rotate(45deg);
+  top: 24px;
+  right: 23.5px;
+}
+@keyframes hidden {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -150px;
+  }
+}
+@keyframes display {
+  from {
+    top: -150px;
+  }
+  to {
+    top: 0px;
+  }
+}
+.yellowBallHidden {
+  top: -150px;
+  animation: hidden 1.5s;
+}
+.yellowBallDisplay {
+  top: 0;
+  animation: display 1s;
+}
+.defaultAnimation {
+  animation: defaultAnimation 1s;
+}
+@keyframes defaultAnimation {
+  from {
+    opacity: 1;
+    position: relative;
+    top: 200px;
+  }
+  to {
+    position: relative;
+    top: 0;
+  }
+}
+@keyframes headerRightAnimation {
+  from {
+    position: absolute;
+    right: -3vw;
+  }
+  to {
+    right: 3vw;
+  }
+}
+@keyframes navAnimation {
+  from {
+    position: fixed;
+    left: -200px;
+  }
+  to {
+  }
+}
+@keyframes 
+@media screen and (max-width: 1000px) {
+  .fixNav {
+    display: none;
+    background: #6501ee;
+    position: fixed;
+    color: white;
+    top: 250px;
+    left: 40px;
+    border-radius: 24px;
+    transition: 1s;
+    animation: navAnimation 1s;
+  }
+  .header,
+  .schedule,
+  .venue,
+  .program {
+    padding-left: 10px;
+  }
+  .bottom {
+    padding-left: 40px;
+  }
+  .menuButton{
+    display: block;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .scheduleSide {
+    display: none;
+  }
 }
