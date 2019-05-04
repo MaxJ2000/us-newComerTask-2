@@ -1,156 +1,217 @@
-span {
-  white-space: pre;
+span
+{
+    white-space: pre;
 }
-body {
-  display: flex;
-  user-select: none;
-  flex-direction: column;
-  overflow-x: hidden;
-  font-family: Roboto, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3",
-    "Noto Sans JP", Meiryo, メイリオ, sans-serif;
+body
+{
+    font-family: Roboto, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',
+    'Noto Sans JP', Meiryo, メイリオ, sans-serif;
+
+    display: flex;
+    overflow-x: hidden;
+    flex-direction: column;
+
+    user-select: none;
 }
-ul {
-  list-style: none;
+ul
+{
+    list-style: none;
 }
-a {
-  text-decoration: none;
-  color: white;
+a
+{
+    text-decoration: none;
+
+    color: white;
 }
-.menuButton {
-  display: none;
-  background: #6501ee;
-  color: white;
-  line-height: 40px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 12px;
-  position: fixed;
-  top: 60px;
-  right: 50px;
-  width: 80px;
-  height: 40px;
-  border-radius: 16px;
-  transition: 1s;
+.menuButton
+{
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 40px;
+
+    position: fixed;
+    top: 60px;
+    right: 50px;
+
+    display: none;
+
+    width: 80px;
+    height: 40px;
+
+    transition: 1s;
+    text-align: center;
+
+    color: white;
+    border-radius: 16px;
+    background: #6501ee;
 }
-.menu {
-  opacity: 0;
-  top: 15vh;
-  z-index: -1;
-  left: 10vw;
-  width: 80vw;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
+.menu
+{
+    position: fixed;
+    z-index: -1;
+    top: 15vh;
+    left: 10vw;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 80vw;
+
+    opacity: 0;
 }
-.menuContent {
-  background: #6501ee;
-  height: 65vh;
-  width: 80vw;
-  border-radius: 24px;
-  opacity: 0.9;
+.menuContent
+{
+    width: 80vw;
+    height: 65vh;
+
+    opacity: .9;
+    border-radius: 24px;
+    background: #6501ee;
 }
-.menuContent img {
-  content: url(./img/罪恶の偷懒.png);
-  position: relative;
-  top: 50px;
-  left: 30px;
-  height: 50vh;
+.menuContent img
+{
+    position: relative;
+    top: 50px;
+    left: 30px;
+
+    height: 50vh;
+
+    content: url(./img/罪恶の偷懒.png);
 }
-.menuBottom {
-  display: flex;
-  position: relative;
-  top: 1vh;
+.menuBottom
+{
+    position: relative;
+    top: 1vh;
+
+    display: flex;
 }
 .menuJP,
-.menuEN {
-  background: rgb(101, 1, 238, 0.8);
-  width: 39.5vw;
-  height: 4vh;
-  line-height: 4vh;
-  color: white;
-  text-align: center;
-  font-size: 12px;
-  font-weight: bolder;
-  border-radius: 12px;
+.menuEN
+{
+    font-size: 12px;
+    font-weight: bolder;
+    line-height: 4vh;
+
+    width: 39.5vw;
+    height: 4vh;
+
+    text-align: center;
+
+    color: white;
+    border-radius: 12px;
+    background: rgb(101, 1, 238, .8);
 }
-.menuEN {
-  position: relative;
-  background: rgb(101, 1, 238, 0.5);
-  left: 1vw;
+.menuEN
+{
+    position: relative;
+    left: 1vw;
+
+    background: rgb(101, 1, 238, .5);
 }
-.dot {
-  display: none;
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background: yellow;
-  border-radius: 50%;
-  transition: width 1s, height 1s, background 1s, top 0.05s, left 0.05s;
+.dot
+{
+    position: absolute;
+
+    display: none;
+
+    width: 15px;
+    height: 15px;
+
+    transition: width 1s, height 1s, background 1s, top .05s, left .05s;
+
+    border-radius: 50%;
+    background: yellow;
 }
-.fixNav {
-  background: #6501ee;
-  position: fixed;
-  color: white;
-  top: 250px;
-  left: 40px;
-  border-radius: 24px;
-  transition: top 1s;
+.fixNav
+{
+    position: fixed;
+    top: 250px;
+    left: 40px;
+
+    transition: top 1s;
+
+    color: white;
+    border-radius: 24px;
+    background: #6501ee;
 }
-.fixNavAnimation{
-  opacity: 0;
-animation: navAnimation 1s;
-  animation-fill-mode: forwards;
+.fixNavAnimation
+{
+    animation: navAnimation 1s;
+
+    opacity: 0;
+
+    animation-fill-mode: forwards;
 }
 
-.navBody {
-  padding: 20px;
-  font-weight: bold;
+.navBody
+{
+    font-weight: bold;
+
+    padding: 20px;
 }
-.navBody li {
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 15%;
+.navBody li
+{
+    padding: 10px;
+
+    cursor: pointer;
+
+    border-radius: 15%;
 }
-.navBody li:hover {
-  background: #4e1ebe;
+.navBody li:hover
+{
+    background: #4e1ebe;
 }
-.header {
-  height: 100vh;
-  width: 100vw;
-  padding: 0 50px 0 350px;
-  background-size: 650px 1000px;
-  margin-left: 10%;
-  display: flex;
-  flex-direction: row;
-  align-content: space-around;
+.header
+{
+    display: flex;
+    align-content: space-around;
+    flex-direction: row;
+
+    width: 100vw;
+    height: 100vh;
+    margin-left: 10%;
+    padding: 0 50px 0 350px;
+
+    background-size: 650px 1000px;
 }
 .headerIntroduction,
-.headerTitle {
-  opacity: 0;
-  animation: defaultAnimation 1s;
-  animation-fill-mode: forwards;
+.headerTitle
+{
+    animation: defaultAnimation 1s;
+
+    opacity: 0;
+
+    animation-fill-mode: forwards;
 }
-.background {
-  background: #4e1ebe;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
+.background
+{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    overflow: hidden;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #4e1ebe;
 }
-.headerPic {
-  height: 1200px;
-  overflow-x: hidden;
-  z-index: -1;
-  position: absolute;
-  top: calc(50vh - 600px);
-  left: calc(50vw - 350px);
-  justify-content: center;
-  content: url(./img/lay7.png);
-  /* height: 900px;
+.headerPic
+{
+    position: absolute;
+    z-index: -1;
+    top: calc(50vh - 600px);
+    left: calc(50vw - 350px);
+
+    overflow-x: hidden;
+    justify-content: center;
+
+    height: 1200px;
+
+    content: url(./img/lay7.png);
+    /* height: 900px;
   width: 600px; */
 }
 /* .header ::before {
@@ -160,786 +221,1094 @@ animation: navAnimation 1s;
   background: url(./img/lay7.png)  no-repeat;
   background-size: 650px 1000px;
 } */
-.yellowBall {
-  position: fixed;
-  width: 280px;
-  color: white;
-  padding: 0px;
-  transition: 0.4s;
+.yellowBall
+{
+    position: fixed;
+
+    width: 280px;
+    padding: 0;
+
+    transition: .4s;
+
+    color: white;
 }
-.relative {
-  position: relative;
+.relative
+{
+    position: relative;
 }
-.radius {
-  border-radius: 24px;
-  width: 160px;
-  background: #6501ee;
+.radius
+{
+    width: 160px;
+
+    border-radius: 24px;
+    background: #6501ee;
 }
-.pre {
-  position: absolute;
-  left: 110px;
-  top: 0px;
-  padding-left: 30px;
-  opacity: 0;
-  transition: all 0.3s linear;
+.pre
+{
+    position: absolute;
+    top: 0;
+    left: 110px;
+
+    padding-left: 30px;
+
+    transition: all .3s linear;
+
+    opacity: 0;
 }
-.hiddenNavLink {
-  display: none;
-  font-weight: 100;
-  width: 130px;
-  padding: 10px 10px 10px 20px;
+.hiddenNavLink
+{
+    font-weight: 100;
+
+    display: none;
+
+    width: 130px;
+    padding: 10px 10px 10px 20px;
 }
-.arrow {
-  position: relative;
+.arrow
+{
+    position: relative;
 }
-.arrow::after {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border: 2px solid yellow;
-  border-right: 0;
-  border-bottom: 0;
-  position: absolute;
-  transform: rotate(135deg);
-  top: 5px;
-  left: 90px;
+.arrow::after
+{
+    position: absolute;
+    top: 5px;
+    left: 90px;
+
+    width: 7px;
+    height: 7px;
+
+    content: '';
+    transform: rotate(135deg);
+
+    border: 2px solid yellow;
+    border-right: 0;
+    border-bottom: 0;
 }
-.hiddenNavLink:hover {
-  font-weight: bolder;
+.hiddenNavLink:hover
+{
+    font-weight: bolder;
 }
 .relative:hover .pre,
-.relative:hover .hiddenNavLink {
-  opacity: 1;
-  display: block;
-}
-.pre:hover .pre {
-  opacity: 1;
-}
-@keyframes move {
-  from {
-    opacity: 0;
-  }
-  to {
+.relative:hover .hiddenNavLink
+{
+    display: block;
+
     opacity: 1;
-  }
 }
-.move {
-  display: flex;
-  align-content: center;
-  margin-left: 40px;
-  height: 150px;
-  
+.pre:hover .pre
+{
+    opacity: 1;
 }
-.moveAnimation{
-  opacity: 0;
-animation: move 1s;
-  animation-fill-mode: forwards;
+@keyframes move
+{
+    from
+    {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
 }
-.ball {
-  width: 60px;
-  height: 60px;
-  background: yellow;
-  border-radius: 50%;
+.move
+{
+    display: flex;
+    align-content: center;
+
+    height: 150px;
+    margin-left: 40px;
 }
-.yellowBallText {
-  position: relative;
-  top: 15px;
-  left: -28px;
-  font-size: 11px;
-  mix-blend-mode: difference;
+.moveAnimation
+{
+    animation: move 1s;
+
+    opacity: 0;
+
+    animation-fill-mode: forwards;
 }
-.headerCenter {
-  display: flex;
-  flex: 1 1 500px;
-  flex-direction: column;
-  justify-content: flex-end;
+.ball
+{
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+    background: yellow;
 }
-.headerTitle {
-  color: white;
-  font-size: 70px;
-  font-weight: bold;
+.yellowBallText
+{
+    font-size: 11px;
+
+    position: relative;
+    top: 15px;
+    left: -28px;
+
+    mix-blend-mode: difference;
 }
-.headerIntroduction {
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
+.headerCenter
+{
+    display: flex;
+    flex: 1 1 500px;
+    flex-direction: column;
+    justify-content: flex-end;
 }
-.headerRight {
-  opacity: 0;
-  display: flex;
-  margin: auto 20px 50px;
-  position: absolute;
-  top: 83vh;
-  right: 3vw;
-  animation: headerRightAnimation 1s;
-  animation-fill-mode: forwards;
+.headerTitle
+{
+    font-size: 70px;
+    font-weight: bold;
+
+    color: white;
 }
-.scrollDownText {
-  color: yellow;
-  position: relative;
-  top: 28px;
-  right: 15px;
-  font-weight: bold;
+.headerIntroduction
+{
+    font-size: 20px;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+
+    color: white;
 }
-.scrollDownButton {
-  height: 72px;
-  width: 72px;
-  border: 4px solid yellow;
-  background-color: yellow;
-  border-radius: 50%;
-  color: #4e1ebe;
-  text-align: center;
-  transition: all 0.3s linear;
+.headerRight
+{
+    position: absolute;
+    top: 83vh;
+    right: 3vw;
+
+    display: flex;
+
+    margin: auto 20px 50px;
+
+    animation: headerRightAnimation 1s;
+
+    opacity: 0;
+
+    animation-fill-mode: forwards;
 }
-.scrollDownButton::before {
-  content: "";
-  z-index: 1;
-  border: 1.5px solid #6501ee;
-  position: absolute;
-  top: 32px;
-  height: 15px;
-  right: 38.5px;
+.scrollDownText
+{
+    font-weight: bold;
+
+    position: relative;
+    top: 28px;
+    right: 15px;
+
+    color: yellow;
 }
-.scrollDownButton::after {
-  content: "";
-  position: absolute;
-  height: 12px;
-  width: 12px;
-  background: none;
-  border: 2.5px solid #6501ee;
-  border-right: 0;
-  border-bottom: 0;
-  transform: rotate(-135deg);
-  top: 34px;
-  right: 32.9px;
+.scrollDownButton
+{
+    width: 72px;
+    height: 72px;
+
+    transition: all .3s linear;
+    text-align: center;
+
+    color: #4e1ebe;
+    border: 4px solid yellow;
+    border-radius: 50%;
+    background-color: yellow;
+}
+.scrollDownButton::before
+{
+    position: absolute;
+    z-index: 1;
+    top: 32px;
+    right: 38.5px;
+
+    height: 15px;
+
+    content: '';
+
+    border: 1.5px solid #6501ee;
+}
+.scrollDownButton::after
+{
+    position: absolute;
+    top: 34px;
+    right: 32.9px;
+
+    width: 12px;
+    height: 12px;
+
+    content: '';
+    transform: rotate(-135deg);
+
+    border: 2.5px solid #6501ee;
+    border-right: 0;
+    border-bottom: 0;
+    background: none;
 }
 .scrollDownButton:hover::after,
-.scrollDownButton:hover::before {
-  border-color: yellow;
+.scrollDownButton:hover::before
+{
+    border-color: yellow;
 }
-.scrollDownButtonHover {
-  width: 72px;
-  height: 72px;
-  transform: scale(0, 0);
-  z-index: -1;
-  background: #4e1ebe;
-  border-radius: 50%;
-  transition: transform, 0.5s;
+.scrollDownButtonHover
+{
+    z-index: -1;
+
+    width: 72px;
+    height: 72px;
+
+    transition: transform, .5s;
+    transform: scale(0, 0);
+
+    border-radius: 50%;
+    background: #4e1ebe;
 }
-.scrollDownButton:hover .scrollDownButtonHover {
-  transform: scale(1, 1);
+.scrollDownButton:hover .scrollDownButtonHover
+{
+    transform: scale(1, 1);
 }
-.schedule {
-  padding: 0 50px 0 350px;
-  height: 900px;
-  color: #4e1ebe;
-  display: flex;
-  margin-left: 10%;
-  flex-direction: column;
-  background: url(./img/img-core-all-top.png) no-repeat bottom right;
-  background-size: 550px 650px;
+.schedule
+{
+    display: flex;
+    flex-direction: column;
+
+    height: 900px;
+    margin-left: 10%;
+    padding: 0 50px 0 350px;
+
+    color: #4e1ebe;
+    background: url(./img/img-core-all-top.png) no-repeat bottom right;
+    background-size: 550px 650px;
 }
-.scheduleH {
-  font-size: 80px;
+.scheduleH
+{
+    font-size: 80px;
 }
-.scheduleMain {
-  display: flex;
-  flex-direction: row;
+.scheduleMain
+{
+    display: flex;
+    flex-direction: row;
 }
 .scheduleLine1,
-.scheduleLine2 {
-  display: flex;
-  flex-direction: column;
-  padding: 0 30px;
-  border-left: 1px solid #decaf5;
+.scheduleLine2
+{
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 30px;
+
+    border-left: 1px solid #decaf5;
 }
-.day {
-  color: red;
-  font-weight: bolder;
+.day
+{
+    font-weight: bolder;
+
+    color: red;
 }
-.date {
-  font-size: 30px;
-  font-weight: bolder;
+.date
+{
+    font-size: 30px;
+    font-weight: bolder;
 }
-.scheduleItem {
-  position: relative;
+.scheduleItem
+{
+    position: relative;
 }
-.scheduleItemF {
-  font-size: 20px;
-  font-weight: bold;
+.scheduleItemF
+{
+    font-size: 20px;
+    font-weight: bold;
 }
 .scheduleItemS,
-.scheduleTime {
-  color: gray;
-  font-weight: bolder;
+.scheduleTime
+{
+    font-weight: bolder;
+
+    color: gray;
 }
-.scheduleItemF::before {
-  content: "";
-  position: absolute;
-  top: 5px;
-  height: 5px;
-  width: 5px;
-  left: -5px;
-  background-color: red;
+.scheduleItemF::before
+{
+    position: absolute;
+    top: 5px;
+    left: -5px;
+
+    width: 5px;
+    height: 5px;
+
+    content: '';
+
+    background-color: red;
 }
-.scheduleButton {
-  display: flex;
-  padding: 80px 0 160px 0;
-}
-.scheduleButtonLeft,
-.scheduleButtonRight {
-  background: yellow;
-  border-radius: 100px;
-  height: 80px;
-  width: 250px;
-  padding-left: 40px;
-  margin-right: 40px;
-  line-height: 80px;
-  text-align: start;
-  font-size: 18px;
-  font-weight: bolder;
-}
-.scheduleSide {
-  flex: 1 0 300px;
-  justify-self: flex-end;
-  height: 409px;
-  display: flex;
-}
-.scheduleImage {
-  content: url(./img/img-float1.jpg);
-  width: 300px;
-  position: absolute;
-  left: calc(100vw - 400px);
-}
-.scheduleSide::before {
-  content: "";
-  width: 260px;
-  height: 30px;
-  background: #4e1ebe;
-  position: absolute;
-  top: 170px;
-  left: calc(100vw - 360px);
+.scheduleButton
+{
+    display: flex;
+
+    padding: 80px 0 160px 0;
 }
 .scheduleButtonLeft,
-.scheduleButtonRight {
-  position: relative;
+.scheduleButtonRight
+{
+    font-size: 18px;
+    font-weight: bolder;
+    line-height: 80px;
+
+    width: 250px;
+    height: 80px;
+    margin-right: 40px;
+    padding-left: 40px;
+
+    text-align: start;
+
+    border-radius: 100px;
+    background: yellow;
+}
+.scheduleSide
+{
+    display: flex;
+    flex: 1 0 300px;
+
+    height: 409px;
+
+    justify-self: flex-end;
+}
+.scheduleImage
+{
+    position: absolute;
+    left: calc(100vw - 400px);
+
+    width: 300px;
+
+    content: url(./img/img-float1.jpg);
+}
+.scheduleSide::before
+{
+    position: absolute;
+    top: 170px;
+    left: calc(100vw - 360px);
+
+    width: 260px;
+    height: 30px;
+
+    content: '';
+
+    background: #4e1ebe;
+}
+.scheduleButtonLeft,
+.scheduleButtonRight
+{
+    position: relative;
 }
 .scheduleButtonLeft::before,
-.scheduleButtonRight::before {
-  content: "";
-  width: 18px;
-  height: 3px;
-  background: black;
-  position: absolute;
-  top: 40px;
-  right: 30px;
+.scheduleButtonRight::before
+{
+    position: absolute;
+    top: 40px;
+    right: 30px;
+
+    width: 18px;
+    height: 3px;
+
+    content: '';
+
+    background: black;
 }
 .scheduleButtonLeft::after,
-.scheduleButtonRight::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border: 2px solid black;
-  border-right: 0;
-  border-bottom: 0;
-  position: absolute;
-  transform: rotate(135deg);
-  top: 35px;
-  right: 30px;
+.scheduleButtonRight::after
+{
+    position: absolute;
+    top: 35px;
+    right: 30px;
+
+    width: 10px;
+    height: 10px;
+
+    content: '';
+    transform: rotate(135deg);
+
+    border: 2px solid black;
+    border-right: 0;
+    border-bottom: 0;
 }
-.scheduleBottom {
-  display: flex;
+.scheduleBottom
+{
+    display: flex;
 }
 .scheduleBottomLeft,
-.scheduleBottomRight {
-  flex: 0 1 250px;
-  height: 220px;
-  padding: 0 30px;
-  background: #4e1ebe;
-  color: white;
+.scheduleBottomRight
+{
+    flex: 0 1 250px;
+
+    height: 220px;
+    padding: 0 30px;
+
+    color: white;
+    background: #4e1ebe;
 }
-.scheduleBottomRight {
-  background: #6501ee;
-  position: relative;
-  top: 40px;
+.scheduleBottomRight
+{
+    position: relative;
+    top: 40px;
+
+    background: #6501ee;
 }
-.scheduleBottomLeftH {
-  font-size: 30px;
-  font-weight: bolder;
-  padding: 50px 0 30px 0;
+.scheduleBottomLeftH
+{
+    font-size: 30px;
+    font-weight: bolder;
+
+    padding: 50px 0 30px 0;
 }
-.scheduleBottomRightH {
-  font-size: 20px;
-  font-weight: bolder;
-  padding: 50px 0 30px 0;
+.scheduleBottomRightH
+{
+    font-size: 20px;
+    font-weight: bolder;
+
+    padding: 50px 0 30px 0;
 }
-.scheduleBottom {
-  display: flex;
+.scheduleBottom
+{
+    display: flex;
 }
-.scheduleBottomLeftP {
-  font-size: 20px;
-  font-weight: bolder;
+.scheduleBottomLeftP
+{
+    font-size: 20px;
+    font-weight: bolder;
 }
-.scheduleBottomRightP {
-  font-size: 16px;
+.scheduleBottomRightP
+{
+    font-size: 16px;
 }
-.venue {
-  display: flex;
-  margin-left: 10%;
-  flex-direction: column;
-  padding: 350px 0 0 280px;
-  color: #4e1ebe;
+.venue
+{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 10%;
+    padding: 350px 0 0 280px;
+
+    color: #4e1ebe;
 }
-.venueH {
-  font-size: 80px;
+.venueH
+{
+    font-size: 80px;
 }
-.venueCenter {
-  display: flex;
-  flex-direction: row;
+.venueCenter
+{
+    display: flex;
+    flex-direction: row;
 }
 .venueCenterLeft,
 .venueCenterCenter,
-.venueCenterRight {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  padding: 0 30px;
-  border-left: 1px solid #decaf5;
+.venueCenterRight
+{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 30px;
+
+    border-left: 1px solid #decaf5;
 }
 .venueCenterLeft::before,
 .venueCenterCenter::before,
-.venueCenterRight::before {
-  content: "";
-  width: 3px;
-  height: 3px;
-  background: red;
-  position: relative;
-  top: 10px;
-  left: -10px;
+.venueCenterRight::before
+{
+    position: relative;
+    top: 10px;
+    left: -10px;
+
+    width: 3px;
+    height: 3px;
+
+    content: '';
+
+    background: red;
 }
 .venueCenterLeft h3,
 .venueCenterCenter h3,
-.venueCenterRight h3 {
-  margin-bottom: 10px;
-  font-size: 15px;
+.venueCenterRight h3
+{
+    font-size: 15px;
+
+    margin-bottom: 10px;
 }
 .venueCenterLeft h2,
 .venueCenterCenter h2,
-.venueCenterRight h2 {
-  margin: 5px 0;
-  font-size: 20px;
+.venueCenterRight h2
+{
+    font-size: 20px;
+
+    margin: 5px 0;
 }
-.venueBottom {
-  display: flex;
-  padding: 80px 0 160px 0;
+.venueBottom
+{
+    display: flex;
+
+    padding: 80px 0 160px 0;
 }
 .venueButtonLeft,
-.venueButtonRight {
-  background: yellow;
-  border-radius: 100px;
-  position: relative;
-  height: 80px;
-  width: 250px;
-  padding-left: 40px;
-  margin-right: 40px;
-  line-height: 80px;
-  text-align: start;
-  font-size: 17px;
-  font-weight: bolder;
+.venueButtonRight
+{
+    font-size: 15px;
+    font-weight: bolder;
+    line-height: 80px;
+
+    position: relative;
+
+    width: 250px;
+    height: 80px;
+    margin-right: 40px;
+    padding-left: 40px;
+
+    text-align: start;
+
+    border-radius: 100px;
+    background: yellow;
 }
 .venueButtonLeft::before,
-.venueButtonRight::before {
-  content: "";
-  width: 18px;
-  height: 3px;
-  background: black;
-  position: absolute;
-  top: 40px;
-  right: 30px;
+.venueButtonRight::before
+{
+    position: absolute;
+    top: 40px;
+    right: 30px;
+
+    width: 18px;
+    height: 3px;
+
+    content: '';
+
+    background: black;
 }
 .venueButtonLeft::after,
-.venueButtonRight::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border: 2px solid black;
-  border-right: 0;
-  border-bottom: 0;
-  position: absolute;
-  transform: rotate(135deg);
-  top: 35px;
-  right: 30px;
+.venueButtonRight::after
+{
+    position: absolute;
+    top: 35px;
+    right: 30px;
+
+    width: 10px;
+    height: 10px;
+
+    content: '';
+    transform: rotate(135deg);
+
+    border: 2px solid black;
+    border-right: 0;
+    border-bottom: 0;
 }
-.program {
-  display: flex;
-  margin-left: 10%;
-  flex-direction: column;
-  padding: 0 0 0 280px;
-  color: #4e1ebe;
+.program
+{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 10%;
+    padding: 0 0 0 280px;
+
+    color: #4e1ebe;
 }
-.programH {
-  font-size: 80px;
+.programH
+{
+    font-size: 80px;
 }
-.programBottom {
-  display: flex;
+.programBottom
+{
+    display: flex;
 }
 .programBottomLeft,
 .programBottomCenter,
-.programBottomRight {
-  display: flex;
-  flex-direction: column;
+.programBottomRight
+{
+    display: flex;
+    flex-direction: column;
 }
-.programButon {
-  background: yellow;
-  border-radius: 100px;
-  position: relative;
-  left: -15px;
-  top: 20px;
-  height: 80px;
-  width: 200px;
-  padding-left: 40px;
-  margin-right: 40px;
-  line-height: 80px;
-  text-align: start;
-  font-size: 17px;
-  font-weight: bolder;
-}
-.programButon::before {
-  content: "";
-  width: 18px;
-  height: 3px;
-  background: black;
-  position: absolute;
-  top: 40px;
-  right: 30px;
-}
-.programButon::after {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border: 2px solid black;
-  border-right: 0;
-  border-bottom: 0;
-  position: absolute;
-  transform: rotate(135deg);
-  top: 35px;
-  right: 30px;
-}
-.programBottom span {
-  color: black;
-  position: relative;
-  padding-left: 10px;
-}
-.programBottom span::before {
-  content: "";
-  background: red;
-  height: 3px;
-  width: 3px;
-  position: absolute;
-  top: 6px;
-  left: 2px;
-}
-.programBottom h3 {
-  margin-top: 0;
-}
-.programBottomLeft img {
-  content: url(./img/img-tenji.jpg);
-  width: 225px;
-  border-radius: 50%;
-}
-.programBottomCenter {
-  position: relative;
-  top: 80px;
-}
-.programBottomCenter img {
-  content: url(./img/img-session.jpg);
-  width: 225px;
-  border-radius: 50%;
-}
-.programBottomRight img {
-  content: url(./img/img-pitch.jpg);
-  width: 225px;
-  border-radius: 50%;
-}
-.bottom {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  background: #4e1ebe;
-  padding: 100px 0 0 280px;
-  margin: 180px 0 0 0px;
-  color: white;
-}
-.bottomIcon {
-  display: flex;
-}
-.facebook {
-  content: url(./img/facebook.png);
-}
-.twitter {
-  content: url(./img/twitter.png);
-}
-.bottomLink {
-  padding: 0;
-  width: 80%;
-  font-size: 13px;
-}
-.bottomLink li {
-  display: inline;
-  padding-right: 15px;
-  font-size: 15px;
-  font-weight: bold;
-}
-.bottomContact {
-  background: #6501ee;
-  border-radius: 24px;
-  width: 80%;
-  padding-left: 20px;
-  margin-bottom: 120px;
-}
-.bottomContact h2 {
-  font-size: 18px;
-}
-.toTopButton {
-  height: 60px;
-  width: 60px;
-  border: 4px solid yellow;
-  background-color: yellow;
-  border-radius: 50%;
-  color: #4e1ebe;
-  text-align: center;
-  transition: all 0.3s linear;
-  position: absolute;
-  bottom: 2vh;
-  right: 2vw;
-}
-.toTopButton::before {
-  content: "";
-  z-index: 1;
-  border: 1.5px solid #6501ee;
-  position: absolute;
-  top: 22px;
-  height: 15px;
-  right: 29px;
-}
-.toTopButton::after {
-  content: "";
-  position: absolute;
-  height: 12px;
-  width: 12px;
-  background: none;
-  border: 2.5px solid #6501ee;
-  border-right: 0;
-  border-bottom: 0;
-  transform: rotate(45deg);
-  top: 24px;
-  right: 23.5px;
-}
-@keyframes hidden {
-  from {
-    top: 0px;
-  }
-  to {
-    top: -150px;
-  }
-}
-@keyframes display {
-  from {
-    top: -150px;
-  }
-  to {
-    top: 0px;
-  }
-}
-.yellowBallHidden {
-  top: -150px;
-  animation: hidden 1.5s;
-  animation-fill-mode: forwards;
-}
-.yellowBallDisplay {
-  top: 0;
-  animation: display 1s;
-  animation-fill-mode: forwards;
-}
-.defaultAnimation {
-  animation: defaultAnimation 1s;
-  animation-fill-mode: forwards;
-}
-@keyframes fontDefaultAnimation {
-  from {
-    opacity: 0;
-    position: relative;
-    top: 200px;
-  }
-  to {
-    opacity: 1;
-    position: relative;
-    top: 0;
-  }
-}
-@keyframes defaultAnimation {
-  from {
-    opacity: 1;
-    position: relative;
-    top: 200px;
-  }
-  to {
-    opacity: 1;
-    position: relative;
-    top: 0;
-  }
-}
-@keyframes headerRightAnimation {
-  from {
-    position: absolute;
-    opacity: 0;
-    right: -3vw;
-  }
-  to {
-    opacity: 1;
-    right: 3vw;
-  }
-}
-@keyframes navAnimation {
-  from {
-    opacity: 0;
-    position: fixed;
-    left: -200px;
-  }
-  to {
-    opacity: 1;
-  }
-}
+.programButon
+{
+    font-size: 17px;
+    font-weight: bolder;
+    line-height: 80px;
 
-@media screen and (max-width: 1000px) {
-  .fixNav {
-    display: none;
-    background: #6501ee;
-    position: fixed;
-    color: white;
-    top: 250px;
-    left: 40px;
-    border-radius: 24px;
-    transition: 1s;
-    animation: navAnimation 1s;
-    animation-fill-mode: forwards;
-  }
-  .header,
-  .schedule,
-  .venue,
-  .program {
-    padding-left: 10px;
-  }
-  .bottom {
+    position: relative;
+    top: 20px;
+    left: -15px;
+
+    width: 200px;
+    height: 80px;
+    margin-right: 40px;
     padding-left: 40px;
-  }
-  .menuButton {
-    display: block;
-  }
-}
-@media screen and (max-width: 1300px) {
-  .scheduleSide {
-    display: none;
-  }
-}
-.eventHeader {
-  height: 45vh;
-}
-.eventBackground {
-  height: 45vh;
-}
-@keyframes eventHeaderPic {
-  from {
-    opacity: 1;
-  }
 
-  to {
-    opacity: 1;
-    right: -300px;
-    top: -400px;
-  }
+    text-align: start;
+
+    border-radius: 100px;
+    background: yellow;
 }
-.eventHeaderPic {
-  opacity: 0;
-  height: 1200px;
-  overflow-x: hidden;
-  z-index: -1;
-  position: absolute;
-  top: calc(50vh - 600px);
-  right: calc(50vw - 450px);
-  justify-content: center;
-  content: url(./img/lay7.png);
-  animation: eventHeaderPic 1s;
-  animation-fill-mode: forwards;
+.programButon::before
+{
+    position: absolute;
+    top: 40px;
+    right: 30px;
+
+    width: 18px;
+    height: 3px;
+
+    content: '';
+
+    background: black;
 }
-.eventHeaderRight {
-  opacity: 0;
-  top: 35vh;
-  animation-fill-mode: forwards;
+.programButon::after
+{
+    position: absolute;
+    top: 35px;
+    right: 30px;
+
+    width: 10px;
+    height: 10px;
+
+    content: '';
+    transform: rotate(135deg);
+
+    border: 2px solid black;
+    border-right: 0;
+    border-bottom: 0;
 }
-.eventHeaderTitle {
-  opacity: 0;
-  color: white;
-  font-size: 70px;
-  font-weight: bold;
-  animation: fontDefaultAnimation 1s;
-  animation-fill-mode: forwards;
+.programBottom span
+{
+    position: relative;
+
+    padding-left: 10px;
+
+    color: black;
 }
-.schedule {
-  opacity: 0;
-  animation: fontDefaultAnimation 1s;
-  animation-fill-mode: forwards;
+.programBottom span::before
+{
+    position: absolute;
+    top: 6px;
+    left: 2px;
+
+    width: 3px;
+    height: 3px;
+
+    content: '';
+
+    background: red;
+}
+.programBottom h3
+{
+    margin-top: 0;
+}
+.programBottomLeft img
+{
+    width: 225px;
+
+    content: url(./img/img-tenji.jpg);
+
+    border-radius: 50%;
+}
+.programBottomCenter
+{
+    position: relative;
+    top: 80px;
+}
+.programBottomCenter img
+{
+    width: 225px;
+
+    content: url(./img/img-session.jpg);
+
+    border-radius: 50%;
+}
+.programBottomRight img
+{
+    width: 225px;
+
+    content: url(./img/img-pitch.jpg);
+
+    border-radius: 50%;
+}
+.bottom
+{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    margin: 180px 0 0 0;
+    padding: 100px 0 0 280px;
+
+    color: white;
+    background: #4e1ebe;
+}
+.bottomIcon
+{
+    display: flex;
+}
+.facebook
+{
+    content: url(./img/facebook.png);
+}
+.twitter
+{
+    content: url(./img/twitter.png);
+}
+.bottomLink
+{
+    font-size: 13px;
+
+    width: 80%;
+    padding: 0;
+}
+.bottomLink li
+{
+    font-size: 15px;
+    font-weight: bold;
+
+    display: inline;
+
+    padding-right: 15px;
+}
+.bottomContact
+{
+    width: 80%;
+    margin-bottom: 120px;
+    padding-left: 20px;
+
+    border-radius: 24px;
+    background: #6501ee;
+}
+.bottomContact h2
+{
+    font-size: 18px;
+}
+.toTopButton
+{
+    position: absolute;
+    right: 2vw;
+    bottom: 2vh;
+
+    width: 60px;
+    height: 60px;
+
+    transition: all .3s linear;
+    text-align: center;
+
+    color: #4e1ebe;
+    border: 4px solid yellow;
+    border-radius: 50%;
+    background-color: yellow;
+}
+.toTopButton::before
+{
+    position: absolute;
+    z-index: 1;
+    top: 22px;
+    right: 29px;
+
+    height: 15px;
+
+    content: '';
+
+    border: 1.5px solid #6501ee;
+}
+.toTopButton::after
+{
+    position: absolute;
+    top: 24px;
+    right: 23.5px;
+
+    width: 12px;
+    height: 12px;
+
+    content: '';
+    transform: rotate(45deg);
+
+    border: 2.5px solid #6501ee;
+    border-right: 0;
+    border-bottom: 0;
+    background: none;
+}
+@keyframes hidden
+{
+    from
+    {
+        top: 0;
+    }
+    to
+    {
+        top: -150px;
+    }
+}
+@keyframes display
+{
+    from
+    {
+        top: -150px;
+    }
+    to
+    {
+        top: 0;
+    }
+}
+.yellowBallHidden
+{
+    top: -150px;
+
+    animation: hidden 1.5s;
+
+    animation-fill-mode: forwards;
+}
+.yellowBallDisplay
+{
+    top: 0;
+
+    animation: display 1s;
+
+    animation-fill-mode: forwards;
+}
+.defaultAnimation
+{
+    animation: defaultAnimation 1s;
+
+    animation-fill-mode: forwards;
+}
+@keyframes fontDefaultAnimation
+{
+    from
+    {
+        position: relative;
+        top: 200px;
+
+        opacity: 0;
+    }
+    to
+    {
+        position: relative;
+        top: 0;
+
+        opacity: 1;
+    }
+}
+@keyframes defaultAnimation
+{
+    from
+    {
+        position: relative;
+        top: 200px;
+
+        opacity: 1;
+    }
+    to
+    {
+        position: relative;
+        top: 0;
+
+        opacity: 1;
+    }
+}
+@keyframes headerRightAnimation
+{
+    from
+    {
+        position: absolute;
+        right: -3vw;
+
+        opacity: 0;
+    }
+    to
+    {
+        right: 3vw;
+
+        opacity: 1;
+    }
+}
+@keyframes navAnimation
+{
+    from
+    {
+        position: fixed;
+        left: -200px;
+
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
 }
 
-@keyframes changePage{
-  from{
-    opacity: 1;
-  }
-  to{
+@media screen and (max-width: 1000px)
+{
+    .fixNav
+    {
+        position: fixed;
+        top: 250px;
+        left: 40px;
+
+        display: none;
+
+        transition: 1s;
+        animation: navAnimation 1s;
+
+        color: white;
+        border-radius: 24px;
+        background: #6501ee;
+
+        animation-fill-mode: forwards;
+    }
+    .header,
+    .schedule,
+    .venue,
+    .program
+    {
+        padding-left: 10px;
+    }
+    .bottom
+    {
+        padding-left: 40px;
+    }
+    .menuButton
+    {
+        display: block;
+    }
+}
+@media screen and (max-width: 1300px)
+{
+    .scheduleSide
+    {
+        display: none;
+    }
+}
+.eventHeader
+{
+    height: 45vh;
+}
+.eventBackground
+{
+    height: 45vh;
+}
+@keyframes eventHeaderPic
+{
+    from
+    {
+        opacity: 1;
+    }
+
+    to
+    {
+        top: -400px;
+        right: -300px;
+
+        opacity: 1;
+    }
+}
+.eventHeaderPic
+{
+    position: absolute;
+    z-index: -1;
+    top: calc(50vh - 600px);
+    right: calc(50vw - 450px);
+
+    overflow-x: hidden;
+    justify-content: center;
+
+    height: 1200px;
+
+    content: url(./img/lay7.png);
+    animation: eventHeaderPic 1s;
+
     opacity: 0;
-  }
-}
-.changePage{
-  animation: changePage 1s;
-  animation-fill-mode: forwards;
-}
-@keyframes eventHeaderPicToHome {
-  from {
-    opacity: 1;
-     right: -300px;
-    top: -400px;
-  }
 
-  to {
-    opacity: 1;
-   top: calc(50vh - 600px);
-  right: calc(50vw - 450px);
-  }
+    animation-fill-mode: forwards;
 }
-@keyframes eventBackgroundToHome{
-  from{
-  }
-  to{
-    height: 100vh;
-  }
+.eventHeaderRight
+{
+    top: 35vh;
+
+    opacity: 0;
+
+    animation-fill-mode: forwards;
 }
-@keyframes backgroundToEvent{
-  from{
-  }
-  to{
-  height: 45vh;
-  }
+.eventHeaderTitle
+{
+    font-size: 70px;
+    font-weight: bold;
+
+    animation: fontDefaultAnimation 1s;
+
+    opacity: 0;
+    color: white;
+
+    animation-fill-mode: forwards;
 }
-.backgroundToEvent{
-  animation: backgroundToEvent 1.5s;
-  animation-fill-mode: forwards;
+.schedule
+{
+    animation: fontDefaultAnimation 1s;
+
+    opacity: 0;
+
+    animation-fill-mode: forwards;
 }
-.eventBackgroundToHome{
-  animation: eventBackgroundToHome 1s;
-  animation-fill-mode: forwards;
+
+@keyframes changePage
+{
+    from
+    {
+        opacity: 1;
+    }
+    to
+    {
+        opacity: 0;
+    }
 }
-.eventHeaderPicToHome{
-  animation: eventHeaderPicToHome 1s;
-  animation-fill-mode: forwards;
+.changePage
+{
+    animation: changePage 1s;
+
+    animation-fill-mode: forwards;
+}
+@keyframes eventHeaderPicToHome
+{
+    from
+    {
+        top: -400px;
+        right: -300px;
+
+        opacity: 1;
+    }
+
+    to
+    {
+        top: calc(50vh - 600px);
+        right: calc(50vw - 450px);
+
+        opacity: 1;
+    }
+}
+@keyframes eventBackgroundToHome
+{
+    from
+    {
+    }
+    to
+    {
+        height: 100vh;
+    }
+}
+@keyframes backgroundToEvent
+{
+    from
+    {
+    }
+    to
+    {
+        height: 45vh;
+    }
+}
+.backgroundToEvent
+{
+    animation: backgroundToEvent 1.5s;
+
+    animation-fill-mode: forwards;
+}
+.eventBackgroundToHome
+{
+    animation: eventBackgroundToHome 1s;
+
+    animation-fill-mode: forwards;
+}
+.eventHeaderPicToHome
+{
+    animation: eventHeaderPicToHome 1s;
+
+    animation-fill-mode: forwards;
 }
