@@ -94,8 +94,12 @@ a {
   top: 250px;
   left: 40px;
   border-radius: 24px;
-  transition: 1s;
-  animation: navAnimation 1s;
+  transition: top 1s;
+}
+.fixNavAnimation{
+  opacity: 0;
+animation: navAnimation 1s;
+  animation-fill-mode: forwards;
 }
 
 .navBody {
@@ -103,6 +107,7 @@ a {
   font-weight: bold;
 }
 .navBody li {
+  cursor: pointer;
   padding: 10px;
   border-radius: 15%;
 }
@@ -110,7 +115,6 @@ a {
   background: #4e1ebe;
 }
 .header {
-  overflow-x: hidden;
   height: 100vh;
   width: 100vw;
   padding: 0 50px 0 350px;
@@ -120,23 +124,29 @@ a {
   flex-direction: row;
   align-content: space-around;
 }
+.headerIntroduction,
+.headerTitle {
+  opacity: 0;
+  animation: defaultAnimation 1s;
+  animation-fill-mode: forwards;
+}
 .background {
   background: #4e1ebe;
-  overflow-y: hidden;
+  overflow: hidden;
   position: absolute;
   z-index: -1;
   left: 0;
-  top:0;
+  top: 0;
   height: 100vh;
   width: 100vw;
-  display:flex;
+  display: flex;
 }
 .headerPic {
   height: 1200px;
   overflow-x: hidden;
   z-index: -1;
   position: absolute;
-  top:calc(50vh - 600px);
+  top: calc(50vh - 600px);
   left: calc(50vw - 350px);
   justify-content: center;
   content: url(./img/lay7.png);
@@ -205,11 +215,25 @@ a {
 .pre:hover .pre {
   opacity: 1;
 }
+@keyframes move {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .move {
   display: flex;
   align-content: center;
   margin-left: 40px;
   height: 150px;
+  
+}
+.moveAnimation{
+  opacity: 0;
+animation: move 1s;
+  animation-fill-mode: forwards;
 }
 .ball {
   width: 60px;
@@ -242,12 +266,14 @@ a {
   margin-bottom: 20px;
 }
 .headerRight {
+  opacity: 0;
   display: flex;
   margin: auto 20px 50px;
   position: absolute;
   top: 83vh;
   right: 3vw;
   animation: headerRightAnimation 1s;
+  animation-fill-mode: forwards;
 }
 .scrollDownText {
   color: yellow;
@@ -384,7 +410,7 @@ a {
   content: url(./img/img-float1.jpg);
   width: 300px;
   position: absolute;
-  left: calc(100vw - 300px);
+  left: calc(100vw - 400px);
 }
 .scheduleSide::before {
   content: "";
@@ -392,8 +418,8 @@ a {
   height: 30px;
   background: #4e1ebe;
   position: absolute;
-  top: calc(100vh + 170px);
-  left: calc(100vw - 260px);
+  top: 170px;
+  left: calc(100vw - 360px);
 }
 .scheduleButtonLeft,
 .scheduleButtonRight {
@@ -729,13 +755,28 @@ a {
 .yellowBallHidden {
   top: -150px;
   animation: hidden 1.5s;
+  animation-fill-mode: forwards;
 }
 .yellowBallDisplay {
   top: 0;
   animation: display 1s;
+  animation-fill-mode: forwards;
 }
 .defaultAnimation {
   animation: defaultAnimation 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes fontDefaultAnimation {
+  from {
+    opacity: 0;
+    position: relative;
+    top: 200px;
+  }
+  to {
+    opacity: 1;
+    position: relative;
+    top: 0;
+  }
 }
 @keyframes defaultAnimation {
   from {
@@ -744,6 +785,7 @@ a {
     top: 200px;
   }
   to {
+    opacity: 1;
     position: relative;
     top: 0;
   }
@@ -751,21 +793,25 @@ a {
 @keyframes headerRightAnimation {
   from {
     position: absolute;
+    opacity: 0;
     right: -3vw;
   }
   to {
+    opacity: 1;
     right: 3vw;
   }
 }
 @keyframes navAnimation {
   from {
+    opacity: 0;
     position: fixed;
     left: -200px;
   }
   to {
+    opacity: 1;
   }
 }
-@keyframes 
+
 @media screen and (max-width: 1000px) {
   .fixNav {
     display: none;
@@ -777,6 +823,7 @@ a {
     border-radius: 24px;
     transition: 1s;
     animation: navAnimation 1s;
+    animation-fill-mode: forwards;
   }
   .header,
   .schedule,
@@ -787,7 +834,7 @@ a {
   .bottom {
     padding-left: 40px;
   }
-  .menuButton{
+  .menuButton {
     display: block;
   }
 }
@@ -795,4 +842,104 @@ a {
   .scheduleSide {
     display: none;
   }
+}
+.eventHeader {
+  height: 45vh;
+}
+.eventBackground {
+  height: 45vh;
+}
+@keyframes eventHeaderPic {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+    right: -300px;
+    top: -400px;
+  }
+}
+.eventHeaderPic {
+  opacity: 0;
+  height: 1200px;
+  overflow-x: hidden;
+  z-index: -1;
+  position: absolute;
+  top: calc(50vh - 600px);
+  right: calc(50vw - 450px);
+  justify-content: center;
+  content: url(./img/lay7.png);
+  animation: eventHeaderPic 1s;
+  animation-fill-mode: forwards;
+}
+.eventHeaderRight {
+  opacity: 0;
+  top: 35vh;
+  animation-fill-mode: forwards;
+}
+.eventHeaderTitle {
+  opacity: 0;
+  color: white;
+  font-size: 70px;
+  font-weight: bold;
+  animation: fontDefaultAnimation 1s;
+  animation-fill-mode: forwards;
+}
+.schedule {
+  opacity: 0;
+  animation: fontDefaultAnimation 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes changePage{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+.changePage{
+  animation: changePage 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes eventHeaderPicToHome {
+  from {
+    opacity: 1;
+     right: -300px;
+    top: -400px;
+  }
+
+  to {
+    opacity: 1;
+   top: calc(50vh - 600px);
+  right: calc(50vw - 450px);
+  }
+}
+@keyframes eventBackgroundToHome{
+  from{
+  }
+  to{
+    height: 100vh;
+  }
+}
+@keyframes backgroundToEvent{
+  from{
+  }
+  to{
+  height: 45vh;
+  }
+}
+.backgroundToEvent{
+  animation: backgroundToEvent 1.5s;
+  animation-fill-mode: forwards;
+}
+.eventBackgroundToHome{
+  animation: eventBackgroundToHome 1s;
+  animation-fill-mode: forwards;
+}
+.eventHeaderPicToHome{
+  animation: eventHeaderPicToHome 1s;
+  animation-fill-mode: forwards;
 }

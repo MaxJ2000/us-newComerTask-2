@@ -167,8 +167,6 @@ function scroolUp() {
 function defaultAnimation() {
   let classArray: string[];
   classArray = [
-    ".headerTitle",
-    ".headerIntroduction",
     ".scheduleH",
     ".scheduleLine1",
     ".scheduleLine2",

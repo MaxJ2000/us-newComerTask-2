@@ -4,7 +4,7 @@ module.exports = {
   entry: {
     app: "./src/app.ts"
   },
-  devtool: "inline-source-map",
+  devtool: "eval-source-map",
   devServer: {
     contentBase: "./dist",
     open: false

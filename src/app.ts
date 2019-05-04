@@ -4,30 +4,145 @@ import register from "./register";
 import Router from "./router";
 window.onload = register;
 let router = new Router();
-router.route("/#/en", () => {
-  document.body.innerHTML = `<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Keio</title>
-</head>
-
-<body>
-    <div class="dot"></div>
+router.route("/#/outline", () => {
+  document.body.innerHTML = `<div class="dot"></div>
     <nav class="fixNav">
         <ul class="navBody">
-            <li><a class="navLink" href="http://127.0.0.1:8080/">Home</a></li>
+            <li><a class="navLink linkHome">Home</a></li>
             <li>
-                <a class="navLink" href="http://127.0.0.1:8080/outline">Event Outline</a>
+                <a class="navLink linkEventOutline" href="http://127.0.0.1:8080">Event Outline</a>
             </li>
             <li><a class="navLink" href="http://127.0.0.1:8080/">Venus Map</a></li>
             <li class="relative">
                 <a class="navLink arrow">Timetable</a>
                 <div class="pre">
                     <div class="radius"><a class="hiddenNavLink" href="http://127.0.0.1:8080/timetable"> Session</a>
+                        <a class="hiddenNavLink" href="http://127.0.0.1:8080/timetable"> Pitch</a>
+                    </div>
+                </div>
+            </li>
+            <li class="relative">
+                <a class="navLink arrow" href="http://127.0.0.1:8080">Program</a>
+                <div class="pre">
+                    <div class="radius">
+                        <a class="hiddenNavLink" href="http://127.0.0.1:8080/session">Exhibition List</a>
+                        <a class="hiddenNavLink" href="http://127.0.0.1:8080/session">Session List</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="http://127.0.0.1:8080/session/sponsor">Sponsor</a>
+            </li>
+        </ul>
+    </nav>
+    <span class="yellowBall">
+        <div class="move">
+            <div class="ball"></div>
+            <span class="yellowBallText">KEIO SFC
+OPEN RESEARCH FORUM 2018 </span>
+        </div>
+    </span>
+    <div class="menuButton">MENU</div>
+    <div class="menu">
+        <div class="menuContent">
+            <img alt="">
+        </div>
+        <div class="menuBottom">
+            <div class="menuJP">JP</div>
+            <div class="menuEN">EN</div>
+        </div>
+    </div>
+    <div class="eventHeader header">
+        <div class="background eventBackground"><img class="eventHeaderPic"/></div>
+        <div class="headerCenter">
+            <span class="eventHeaderTitle">Event Outline
+            </span>
+        </div>
+        <div class="headerRight eventHeaderRight">
+            <span class="scrollDownText">SCROLL</span>
+            <div class="scrollDownButton">
+                <div class="scrollDownButtonHover"></div>
+            </div>
+        </div>
+    </div>
+    <div class="schedule">
+        <h1 class="scheduleH">Schedule</h1>
+        <div class="scheduleMain">
+            <div class="scheduleLine1">
+                <div class="day">DAY1</div>
+                <div class="date">2018/11/22 (Thu)</div><br><br>
+                <div class="scheduleItem">
+                    <span class="scheduleItemF"> Exhibition</span>
+                    <span class="scheduleItemS">@Hall B1F Venue・Hall A</span>
+                </div>
+                <div class="scheduleItem">
+                    <span class="scheduleItemF"> Session</span>
+                    <span class="scheduleItemS">@Tower 4F Venue</span>
+                </div><br>
+                <div class="date">10:00～20:00</div>
+                <span class="scheduleTime">( Open 9:30)</span><br><br>
+                <div class="scheduleItem">
+                    <span class="scheduleItemF"> Pitch</span>
+                    <span class="scheduleItemS">@Hall B1F Venue・Hall B</span>
+                </div><br>
+                <div class="date">10:00～19:00</div>
+                <span class="scheduleTime">( Open 9:30)</span>
+            </div>
+            <div class="scheduleLine2">
+                <div class="day">DAY1</div>
+                <div class="date">2018/11/22 (Thu)</div><br><br>
+                <div class="scheduleItem">
+                    <span class="scheduleItemF"> Exhibition</span>
+                    <span class="scheduleItemS">@Hall B1F Venue・Hall A</span>
+                </div>
+                <div class="scheduleItem">
+                    <span class="scheduleItemF"> Session</span>
+                    <span class="scheduleItemS">@Tower 4F Venue</span>
+                </div><br>
+                <div class="date">10:00～20:00</div>
+                <span class="scheduleTime">( Open 9:30)</span><br><br>
+                <div class="scheduleItem">
+                    <span class="scheduleItemF"> Pitch</span>
+                    <span class="scheduleItemS">@Hall B1F Venue・Hall B</span>
+                </div><br>
+                <div class="date">10:00～19:00</div>
+                <span class="scheduleTime">( Open 9:30)</span>
+            </div>
+        </div>
+        <div class="scheduleButton">
+            <div class="scheduleButtonLeft">Session Timetable</div>
+            <div class="scheduleButtonRight">Pitch Timetable</div>
+        </div>
+        <div class="scheduleBottom">
+            <div class="scheduleBottomLeft">
+                <div class="scheduleBottomLeftH">Admission Fee</div>
+                <div class="scheduleBottomLeftP">Free (Pre-registration NOT required)</div>
+            </div>
+            <div class="scheduleBottomRight">
+                <div class="scheduleBottomRightH">About Reception</div>
+                <div class="scheduleBottomRightP">Please stop by the general reception at the entrance of Hall B1F
+                    before entering the SFC Open Research Forum 2018.</div>
+            </div>
+        </div>
+        <div class="scheduleButtom">
+            <a class="scheduleLink" href="http://127.0.0.1:8080/timetable">Session Timetable</a>
+        </div>
+    </div>`;
+});
+router.route("/#/en", () => {
+  document.body.innerHTML = `<body>
+    <div class="dot"></div>
+    <nav class="fixNav fixNavAnimation">
+        <ul class="navBody">
+            <li><a class="navLink" href="http://127.0.0.1:8080/">Home</a></li>
+            <li>
+                <a class="navLink linkEventOutline">Event Outline</a>
+            </li>
+            <li><a class="navLink" href="http://127.0.0.1:8080/">Venus Map</a></li>
+            <li class="relative">
+                <a class="navLink arrow">Timetable</a>
+                <div class="pre">
+                    <div class="radius"><a class="hiddenNavLink"> Session</a>
                         <a class="hiddenNavLink" href="http://127.0.0.1:8080/timetable"> Pitch</a>
                     </div>
                 </div>
@@ -203,16 +318,6 @@ ORF2018 was finished.Thank you for coming!
             </div>
         </div>
     </div>
-    <!-- <div class="satellite Event">
-        <h1 class="satelliteH">Satellite Event</h1>
-        <img alt="">
-        <span>Final round and award</span>
-        <span>ceremony of Fab 3D</span>
-        <span>Contest 2018</span>
-        <div class="satelliteButton">
-            Learn More
-        </div>
-    </div> -->
     <div class="bottom">
         <div class="bottomIcon">
             <div class="facebook"></div>
@@ -239,8 +344,69 @@ ORF2018 was finished.Thank you for coming!
         </div>
         <div class="toTopButton"></div>
     </div>
-</body>
-
-</html>`;
+</body>`;
 });
 router.init("/#/en");
+addListenerToHome();
+function addListenerToHome() {
+  (<HTMLLinkElement>(
+    document.querySelector(".linkEventOutline")
+  )).addEventListener("click", () => {
+    window.scrollTo(0, 0);
+    (<HTMLDivElement>document.querySelector(".headerTitle")).classList.add(
+      "changePage"
+    );
+    (<HTMLDivElement>(
+      document.querySelector(".headerIntroduction")
+    )).classList.add("changePage");
+    (<HTMLDivElement>(
+      document.querySelector(".headerIntroduction")
+    )).classList.add("changePage");
+    (<HTMLDivElement>document.querySelector(".headerRight")).classList.add(
+      "changePage"
+    );
+    (<HTMLDivElement>document.querySelector(".background")).classList.add(
+      "backgroundToEvent"
+    );
+    setTimeout(() => {
+      router.init("/#/outline");
+      addListenerToEventOutline();
+      register();
+    }, 1000);
+  });
+}
+function addListenerToEventOutline() {
+  router.init("/#/outline");
+  (<HTMLDivElement>document.querySelector(".linkHome")).addEventListener(
+    "click",
+    () => {
+      window.scrollTo(0, 0);
+      (<HTMLDivElement>(
+        document.querySelector(".eventHeaderTitle")
+      )).classList.add("changePage");
+      (<HTMLDivElement>document.querySelector(".eventHeaderPic")).classList.add(
+        "eventHeaderPicToHome"
+      );
+      (<HTMLDivElement>(
+        document.querySelector(".eventHeaderRight")
+      )).classList.add("changePage");
+      (<HTMLDivElement>document.querySelector(".schedule")).classList.add(
+        "changePage"
+      );
+      (<HTMLDivElement>(
+        document.querySelector(".eventBackground")
+      )).classList.add("eventBackgroundToHome");
+      setTimeout(() => {
+        router.init("/#/en");
+        (<HTMLDivElement>document.querySelector(".fixNav")).classList.remove(
+          "fixNavAnimation"
+        );
+        (<HTMLDivElement>document.querySelector(".move")).classList.remove(
+          "moveAnimation"
+        );
+        addListenerToHome();
+        register();
+      }, 1000);
+    }
+  );
+}
